@@ -238,4 +238,11 @@ class InstructeurModel
         $this->db->query($sql);
         return $this->db->resultSet();
     }
+
+    function deleteInstructeur($id)
+    {
+        $sql = "DELETE FROM Instructeur WHERE Id = $id";
+        $this->db->query($sql);
+        return $this->db->resultSet();
+    }
 }
