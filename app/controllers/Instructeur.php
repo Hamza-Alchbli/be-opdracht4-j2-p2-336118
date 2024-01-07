@@ -228,14 +228,15 @@ class Instructeur extends BaseController
                 Instructeur $naam kan niet definitief worden verwijderd, verander eerst de status ziekte/verlof
               </div>";
             header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
+        } else {
+
+            $this->instructeurModel->removeAllVoertuigen($id);
+            $this->instructeurModel->deleteInstructeur($id);
+            echo "<div class='alert alert-success' role='alert'>
+                    Instructeur is verwijderd
+                  </div>";
+
+            // header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
         }
-
-        $this->instructeurModel->removeAllVoertuigen($id);
-        $this->instructeurModel->deleteInstructeur($id);
-        echo "<div class='alert alert-success' role='alert'>
-                Instructeur is verwijderd
-              </div>";
-
-        header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
     }
 }
