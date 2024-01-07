@@ -230,11 +230,9 @@ class Instructeur extends BaseController
             header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
         }
 
-        // $this->instructeurModel->removeAllVoertuigen($id);
-        // $this->instructeurModel->deleteInstructeur($id);
-        // echo "<div class='alert alert-success' role='alert'>
-        //         Instructeur is verwijderd
-        //       </div>";
+        $this->instructeurModel->removeAllVoertuigen($id);
+       
+
         header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
     }
 }
