@@ -232,8 +232,10 @@ class Instructeur extends BaseController
 
         $this->instructeurModel->removeAllVoertuigen($id);
         $this->instructeurModel->deleteInstructeur($id);
-        
+        echo "<div class='alert alert-success' role='alert'>
+                Instructeur is verwijderd
+              </div>";
 
-        header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
+        header("refresh:2;url=" . URLROOT . "/instructeur/overzichtinstructeur");
     }
 }
