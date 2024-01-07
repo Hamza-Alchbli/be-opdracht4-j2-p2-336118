@@ -32,6 +32,7 @@
                 <th>Aantal sterren</th>
                 <th>Voertuigen</th>
                 <th>Ziek/Verlof</th>
+                <th>Verwijder</th>
             </thead>
             <tbody>
                 <?php foreach ($data['rows'] as $instructeur) :
@@ -62,6 +63,12 @@
                                 </a>
                             <?php } ?>
                         </td>
+                        <td>
+                            <a href='<?= URLROOT ?>/instructeur/instructeurDelete/<?= $instructeur->Id ?>'>
+                                <i class='bi bi-trash'></i>
+                            </a>
+                        </td>
+
                     </tr>
                 <?php endforeach;
                 ?>
