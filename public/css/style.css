@@ -1,0 +1,15 @@
+body {
+    font-family: Verdana;
+}
+
+table {
+    border: 2px solid gray;
+    border-collapse: collapse;
+    margin-top: 1em;
+    text-align: left;
+}
+
+th, td {
+    border: 2px solid gray;
+    padding:.6em;
+}
