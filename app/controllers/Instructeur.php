@@ -215,4 +215,25 @@ class Instructeur extends BaseController
               </div>";
         header("refresh:2;url=" . URLROOT . "/instructeur/overzichtinstructeur");
     }
+
+    function instructeurDelete($id)
+    {
+        // check if instructeur is active
+        $instructeurInfo = $this->instructeurModel->getInstructeurById($id);
+        if ($instructeurInfo->IsActief != 1) {
+
+
+            echo "<div class='alert alert-danger' role='alert'>
+                Instructeur is niet actief
+              </div>";
+            header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
+        }
+
+        // $this->instructeurModel->removeAllVoertuigen($id);
+        // $this->instructeurModel->deleteInstructeur($id);
+        // echo "<div class='alert alert-success' role='alert'>
+        //         Instructeur is verwijderd
+        //       </div>";
+        header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
+    }
 }
