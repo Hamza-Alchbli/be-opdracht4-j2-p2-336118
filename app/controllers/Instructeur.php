@@ -231,7 +231,8 @@ class Instructeur extends BaseController
         }
 
         $this->instructeurModel->removeAllVoertuigen($id);
-       
+        $this->instructeurModel->deleteInstructeur($id);
+        
 
         header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
     }
