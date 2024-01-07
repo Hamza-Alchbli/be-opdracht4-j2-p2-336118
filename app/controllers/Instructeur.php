@@ -236,6 +236,6 @@ class Instructeur extends BaseController
                 Instructeur is verwijderd
               </div>";
 
-        header("refresh:2;url=" . URLROOT . "/instructeur/overzichtinstructeur");
+        header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
     }
 }
