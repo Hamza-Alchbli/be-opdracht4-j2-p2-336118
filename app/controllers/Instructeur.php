@@ -220,11 +220,12 @@ class Instructeur extends BaseController
     {
         // check if instructeur is active
         $instructeurInfo = $this->instructeurModel->getInstructeurById($id);
+        $naam = $instructeurInfo->Voornaam . " " . $instructeurInfo->Tussenvoegsel . " " . $instructeurInfo->Achternaam;
         if ($instructeurInfo->IsActief != 1) {
 
 
             echo "<div class='alert alert-danger' role='alert'>
-                Instructeur is niet actief
+                Instructeur $naam kan niet definitief worden verwijderd, verander eerst de status ziekte/verlof
               </div>";
             header("refresh:3;url=" . URLROOT . "/instructeur/overzichtinstructeur");
         }
